@@ -1,6 +1,6 @@
 ﻿namespace LeetCode
 {
-    public class PlaceFlowers
+    public class Can_Place_Flowers
     {
         public bool CanPlaceFlowers(int[] flowerbed, int n)
         {

@@ -4,12 +4,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestProject
 {
     [TestClass]
-    public class MaxAverageTests
+    public class MaximumAverageSubarray_ITests
     {
         [TestMethod]
         public void FindMaxAverageTest()
         {
-            MaxAverage l = new MaxAverage();
+            MaximumAverageSubarray_I l = new MaximumAverageSubarray_I();
 
             int[] nums = { 1, 12, -5, -6, 50, 3 };
             int k = 4;

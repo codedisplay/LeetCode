@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LeetCode
+namespace UnitTestProject
 {
-    public class MaxProduct
+    public class SymmetricTreeTests
     {
+        //TODO:tests
     }
 }

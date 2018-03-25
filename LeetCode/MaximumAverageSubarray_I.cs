@@ -1,6 +1,6 @@
 ﻿namespace LeetCode
 {
-    public class MaxAverage
+    public class MaximumAverageSubarray_I
     {
         public double FindMaxAverage(int[] nums, int k)
         {

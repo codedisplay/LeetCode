@@ -4,12 +4,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestProject
 {
     [TestClass]
-    public class PlaceFlowersTests
+    public class Can_Place_FlowersTests
     {
         [TestMethod]
         public void CanPlaceFlowersTests()
         {
-            PlaceFlowers l = new PlaceFlowers();
+            Can_Place_Flowers l = new Can_Place_Flowers();
 
             int[] nums = { 1, 0, 0, 0, 1 };
             int n = 1;

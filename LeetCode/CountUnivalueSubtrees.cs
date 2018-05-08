@@ -2,32 +2,32 @@
 {
     public class CountUnivalueSubtrees
     {
-        public static int CountUnivalSubtrees(TreeNode root)
+        public int CountUnivalSubtrees(TreeNode root)
         {
-            //if (root == null)
-            //    return 0;
+            int count = 0;
 
-            int count = GetUnivalSubtrees(root, 0, root.val);
+            GetUnivalSubtrees(root, ref count);
 
             return count;
         }
 
-        private static int GetUnivalSubtrees(TreeNode node, int currentCount, int comparisionValue)
+        private bool GetUnivalSubtrees(TreeNode node, ref int currentCount)
         {
             if (node == null)
-                return currentCount;
+                return true;
 
-            if (node.left == null && node.right == null)
+            bool isLeftValid = GetUnivalSubtrees(node.left, ref currentCount);
+            bool isRightValid = GetUnivalSubtrees(node.right, ref currentCount);
+
+            if ((isLeftValid && isRightValid) &&
+                ((node.left == null || node.left.val == node.val) &&
+                (node.right == null || node.right.val == node.val)))
+            {
                 currentCount++;
+                return true;
+            }
 
-            GetUnivalSubtrees(node.left, currentCount, node.val);
-
-            //if (node.val == comparisionValue)
-            //{
-
-            //}
-
-            return currentCount;
+            return false;
         }
 
         public class TreeNode

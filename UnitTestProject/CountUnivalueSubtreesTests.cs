@@ -1,7 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using LeetCode;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using static LeetCode.CountUnivalueSubtrees;
 
 namespace UnitTestProject
 {
@@ -11,7 +10,23 @@ namespace UnitTestProject
         [TestMethod]
         public void CountUnivalSubtrees()
         {
-            // TODO: solution
+            CountUnivalueSubtrees l = new CountUnivalueSubtrees();
+
+            TreeNode treeNode =
+                new TreeNode(5)
+                {
+                    left = new TreeNode(1)
+                    {
+                        left = new TreeNode(5) { },
+                        right = new TreeNode(5) { }
+                    },
+                    right = new TreeNode(5)
+                    {
+                        right = new TreeNode(5) { }
+                    }
+                };
+
+            Assert.AreEqual(4, l.CountUnivalSubtrees(treeNode));
         }
     }
 }

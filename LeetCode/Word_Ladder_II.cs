@@ -50,8 +50,8 @@ namespace LeetCode
                     {
                         charsDifferent++;
 
-                        if (charsDifferent > 1)
-                            break;
+                        //if (charsDifferent > 1)
+                        //    break;
                     }
                 }
 

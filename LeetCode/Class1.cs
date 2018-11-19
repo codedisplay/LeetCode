@@ -4,6 +4,42 @@ namespace LeetCode
 {
     public class Class1
     {
+
+        //Word_Ladder word_Ladder = new Word_Ladder();
+
+        //int val = word_Ladder.LadderLength("hit", "hog", new List<string> { "hot", "dot", "hog" });
+
+        //val = word_Ladder.LadderLength("hit", "cog", new List<string> { "hot", "dot", "dog", "lot", "log", "cog" });
+
+        //    val = word_Ladder.LadderLength("hit", "cog", new List<String> { "hot", "dot", "dog", "lot", "log" });
+            //string str = "sfd";
+            //var x1111= Class1.Perform("2d5 + 3d6 - 1d8 + 5");
+            //Sqrt_x_ sqrt_X_ = new Sqrt_x_();
+
+            //var x=sqrt_X_.MySqrt(8);
+            //K_diffPairsInAnArray l = new K_diffPairsInAnArray();
+
+            //int[] arr = new int[] { 3, 1, 4, 1, 5 };
+            //int k = 2;
+            //var x = l.FindPairs(arr, k);//2
+
+            //arr = new int[] { 1, 2, 3, 4, 5 };
+            //k = 1;
+            //x = l.FindPairs(arr, k);//4
+
+            //arr = new int[] { 1, 3, 1, 5, 4 };
+            //k = 0;
+            //x = l.FindPairs(arr, k);//1
+
+            //arr = new int[] { 1, 1, 1, 1, 1 };
+            //k = 0;
+            //x = l.FindPairs(arr, k);//1
+
+            //arr = new int[] { 1, 3, 1, 5, 4 };
+            //k = 0;
+            //x = l.FindPairs(arr, k);//1
+
+
         public static int Perform(string str)
         {
             int totalValue = 0, length = str.Length, i = 0;

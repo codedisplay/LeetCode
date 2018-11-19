@@ -1,6 +1,6 @@
 ﻿namespace LeetCode
 {
-    public class K_diffPairsInAnArray
+    public class K_DiffPairsInAnArray
     {
         public int FindPairs(int[] nums, int k)
         {

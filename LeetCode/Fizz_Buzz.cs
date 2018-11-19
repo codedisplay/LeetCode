@@ -1,0 +1,29 @@
+﻿using System.Collections.Generic;
+
+namespace LeetCode
+{
+    public class Fizz_Buzz
+    {
+        public IList<string> FizzBuzz(int n)
+        {
+            IList<string> list = new List<string>();
+
+            for (int i = 1; i <= n; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    if (i % 5 == 0)
+                        list.Add("FizzBuzz");
+                    else
+                        list.Add("Fizz");
+                }
+                else if (i % 5 == 0)
+                    list.Add("Buzz");
+                else
+                    list.Add(i + "");
+            }
+
+            return list;
+        }
+    }
+}

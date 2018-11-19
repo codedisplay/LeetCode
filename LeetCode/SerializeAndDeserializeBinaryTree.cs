@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using LeetCode.Model;
 
 namespace LeetCode
 {
@@ -60,13 +61,5 @@ namespace LeetCode
         // Your Codec object will be instantiated and called as such:
         // Codec codec = new Codec();
         // codec.deserialize(codec.serialize(root));
-
-        public class TreeNode
-        {
-            public int val;
-            public TreeNode left;
-            public TreeNode right;
-            public TreeNode(int x) { val = x; }
-        }
     }
 }

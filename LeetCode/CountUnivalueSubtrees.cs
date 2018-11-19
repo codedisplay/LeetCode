@@ -1,4 +1,6 @@
-﻿namespace LeetCode
+﻿using LeetCode.Model;
+
+namespace LeetCode
 {
     public class CountUnivalueSubtrees
     {
@@ -28,18 +30,6 @@
             }
 
             return false;
-        }
-
-        public class TreeNode
-        {
-            public int val;
-            public TreeNode left;
-            public TreeNode right;
-
-            public TreeNode(int x)
-            {
-                val = x;
-            }
         }
     }
 }

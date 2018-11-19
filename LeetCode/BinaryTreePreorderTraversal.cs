@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using LeetCode.Model;
 
 namespace LeetCode
 {
@@ -19,20 +20,9 @@ namespace LeetCode
                 return;
 
             values.Add(root.val);
+
             PreorderTraversal(root.left, values);
             PreorderTraversal(root.right, values);
-        }
-
-        public class TreeNode
-        {
-            public int val;
-            public TreeNode left;
-            public TreeNode right;
-
-            public TreeNode(int x)
-            {
-                val = x;
-            }
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using LeetCode;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using static LeetCode.SerializeAndDeserializeBinaryTree;
+using LeetCode.Model;
 
 namespace UnitTestProject
 {

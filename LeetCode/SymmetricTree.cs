@@ -1,4 +1,6 @@
-﻿namespace LeetCode
+﻿using LeetCode.Model;
+
+namespace LeetCode
 {
     public class SymmetricTree
     {
@@ -23,18 +25,6 @@
             if (!IsSymmetric(leftRoot.right, rightRoot.left)) return false;
 
             return true;
-        }
-
-        public class TreeNode
-        {
-            public int val;
-            public TreeNode left;
-            public TreeNode right;
-
-            public TreeNode(int x)
-            {
-                val = x;
-            }
         }
     }
 }

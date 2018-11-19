@@ -1,6 +1,6 @@
 ﻿using LeetCode;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using static LeetCode.CountUnivalueSubtrees;
+using LeetCode.Model;
 
 namespace UnitTestProject
 {

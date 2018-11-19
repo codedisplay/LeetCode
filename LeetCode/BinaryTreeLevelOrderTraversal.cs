@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using LeetCode.Model;
 
 namespace LeetCode
 {
@@ -32,18 +33,6 @@ namespace LeetCode
             list.Add(root.val);
             RetrieveLevelOrder(root.left, values, currentOrder + 1);
             RetrieveLevelOrder(root.right, values, currentOrder + 1);
-        }
-
-        public class TreeNode
-        {
-            public int val;
-            public TreeNode left;
-            public TreeNode right;
-
-            public TreeNode(int x)
-            {
-                val = x;
-            }
         }
     }
 }

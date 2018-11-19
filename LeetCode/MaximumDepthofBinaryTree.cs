@@ -1,4 +1,6 @@
-﻿namespace LeetCode
+﻿using LeetCode.Model;
+
+namespace LeetCode
 {
     public class MaximumDepthofBinaryTree
     {
@@ -22,18 +24,6 @@
             int rightMaxDepth = MaxDepth(root.right, currentDepth);
 
             return leftMaxDepth > rightMaxDepth ? leftMaxDepth : rightMaxDepth;
-        }
-
-        public class TreeNode
-        {
-            public int val;
-            public TreeNode left;
-            public TreeNode right;
-
-            public TreeNode(int x)
-            {
-                val = x;
-            }
         }
     }
 }

@@ -202,7 +202,7 @@ namespace LeetCode
                         {
                             if (charAddOrReplace > 0)
                             {
-                                int charsPending = 0;
+                                //int charsPending = 0;
 
                                 // Do Replace 'times' times
                                 if (charAddOrReplace > times)

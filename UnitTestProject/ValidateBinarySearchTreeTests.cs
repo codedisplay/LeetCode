@@ -1,4 +1,5 @@
 ﻿using LeetCode;
+using LeetCode.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestProject
@@ -11,36 +12,36 @@ namespace UnitTestProject
         {
             ValidateBinarySearchTree fd = new ValidateBinarySearchTree();
 
-            ValidateBinarySearchTree.TreeNode t = new ValidateBinarySearchTree.TreeNode(1);
+            TreeNode t = new TreeNode(1);
 
-            t.left = new ValidateBinarySearchTree.TreeNode(1);
+            t.left = new TreeNode(1);
 
             Assert.IsFalse(fd.IsValidBST(t));//false
 
-            t = new ValidateBinarySearchTree.TreeNode(10);
+            t = new TreeNode(10);
 
-            t.left = new ValidateBinarySearchTree.TreeNode(5);
+            t.left = new TreeNode(5);
 
-            t.right = new ValidateBinarySearchTree.TreeNode(15)
+            t.right = new TreeNode(15)
             {
-                left = new ValidateBinarySearchTree.TreeNode(6),
-                right = new ValidateBinarySearchTree.TreeNode(20)
+                left = new TreeNode(6),
+                right = new TreeNode(20)
             };
 
             Assert.IsFalse(fd.IsValidBST(t));//false
 
-            t = new ValidateBinarySearchTree.TreeNode(3);
+            t = new TreeNode(3);
 
-            t.left = new ValidateBinarySearchTree.TreeNode(1)
+            t.left = new TreeNode(1)
             {
-                left = new ValidateBinarySearchTree.TreeNode(0),
-                right = new ValidateBinarySearchTree.TreeNode(2)
+                left = new TreeNode(0),
+                right = new TreeNode(2)
             };
 
-            t.right = new ValidateBinarySearchTree.TreeNode(5)
+            t.right = new TreeNode(5)
             {
-                left = new ValidateBinarySearchTree.TreeNode(4),
-                right = new ValidateBinarySearchTree.TreeNode(6)
+                left = new TreeNode(4),
+                right = new TreeNode(6)
             };
 
             Assert.IsTrue(fd.IsValidBST(t));//true

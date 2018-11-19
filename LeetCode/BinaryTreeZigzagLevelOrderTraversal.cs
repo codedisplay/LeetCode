@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using LeetCode.Model;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LeetCode
@@ -54,14 +55,6 @@ namespace LeetCode
 
             list.Add(listItem);
             return newStack;
-        }
-
-        public class TreeNode
-        {
-            public int val;
-            public TreeNode left;
-            public TreeNode right;
-            public TreeNode(int x) { val = x; }
         }
     }
 }

@@ -14,7 +14,7 @@ namespace UnitTestProject
             //The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
             _3Sum_Closest obj = new _3Sum_Closest();
 
-            var x = obj.ThreeSumClosest(nums, 1);
+            var x = obj.ThreeSumClosest(nums, 1);//2
 
 
             nums = new int[] { 3, 3, 3, 3, 3, 3, 3, 3, 3 };
@@ -37,15 +37,24 @@ namespace UnitTestProject
             nums = new int[] { 1, 1, -1 };
             x = obj.ThreeSumClosest(nums, 2);//1
 
+            nums = new int[] { 1, 1, 1, 0 };
+            x = obj.ThreeSumClosest(nums, -100);//2
 
+            nums = new int[] { 1, 1, 1, 0 };
+            x = obj.ThreeSumClosest(nums, 100);//3
 
             nums = new int[] { 0, 1, 1, 1 };
             x = obj.ThreeSumClosest(nums, -100);//2
 
-
             nums = new int[] { -1, -1, 1, 1, 3 };
             x = obj.ThreeSumClosest(nums, -1);//-1
-     
-    }
+
+            nums = new int[] { -55, -24, -18, -11, -7, -3, 4, 5, 6, 9, 11, 23, 33 };
+            x = obj.ThreeSumClosest(nums, 0);//0
+
+
+            nums = new int[] { 1, 2, 5, 10, 11 };
+            x = obj.ThreeSumClosest(nums, 12);//13
+        }
     }
 }

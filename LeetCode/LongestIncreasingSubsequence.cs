@@ -12,7 +12,7 @@ namespace LeetCode
             var lengthArr = new int[nums.Length];
             lengthArr[0] = 1;
             int maxLength = 1;
-
+            
             for (int i = 1; i < nums.Length; i++)
             {
                 lengthArr[i] = 1;

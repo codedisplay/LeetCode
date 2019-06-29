@@ -7,9 +7,7 @@ namespace LeetCode
         public int CoinChange(int[] coins, int amount)
         {
             int[] arr = new int[amount + 1];
-            Array.Sort(arr);
-            Array.Fill(arr, amount+1);
-
+            Array.Fill(arr, amount + 1);
             arr[0] = 0;
 
             for (int i = 1; i <= amount; i++)

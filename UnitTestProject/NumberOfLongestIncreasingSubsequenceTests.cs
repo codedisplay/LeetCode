@@ -17,19 +17,33 @@ namespace UnitTestProject
             arr = new int[] { 2, 2, 2, 2, 2 };
             x = obj.FindNumberOfLIS(arr);//5
 
+            arr = new int[] { 1, 2, 2, 2, 2, 2 };
+            x = obj.FindNumberOfLIS(arr);//5
+
+            arr = new int[] { 1, 2, 2, 2, 2, 2, 3 };
+            x = obj.FindNumberOfLIS(arr);//5
+
             arr = new int[] { 4, 6, 7, 7 };
             x = obj.FindNumberOfLIS(arr);//2  
 
-            //arr = new int[] { 0, 4, 12, 2, 10, 6, 9, 13, 3, 11, 7, 15 };
-            //x = obj.FindNumberOfLIS(arr);//
-
             arr = new int[] { 1, 2, 4, 3, 5, 4, 7, 2 };
-            x = obj.FindNumberOfLIS(arr);//3
-
-
+            x = obj.FindNumberOfLIS(arr);//2
 
             arr = new int[] { };
             x = obj.FindNumberOfLIS(arr);//0
+
+            arr = new int[] { 1, 2 };
+            x = obj.FindNumberOfLIS(arr);//1
+
+            arr = new int[] { 1 };
+            x = obj.FindNumberOfLIS(arr);//1
+             
+            // 1,2,4,5,7
+            // 1,2,3,5,7
+            // 1,2,3,4,7
+
+            arr = new int[] { 1, 2, 4, 3, 5, 4, 7, 2 };
+            x = obj.FindNumberOfLIS(arr);//3
         }
     }
 }

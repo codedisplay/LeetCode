@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LeetCode
 {
@@ -9,53 +10,85 @@ namespace LeetCode
             if (nums.Length == 0)
                 return 0;
 
-            int[] lis = new int[nums.Length];//array for tracking length of increasing sub array
-            Array.Fill(lis, 1);
-            int currentMax = 1, totalMaxCount = 1;
+            int[] dp = new int[nums.Length];//array for tracking len of increasing sub array
+            List<int> countArr = new List<int> { 0 };// list for tracking no. of longest seq's
+
+            Array.Fill(dp, 1);
 
             for (int i = 1; i < nums.Length; i++)
             {
-                int currentMaxCount = 1;
-                bool isCurrentModified = false ;
-
                 for (int j = 0; j < i; j++)
                 {
-                    if (nums[j] == nums[i])
+                    if (nums[j] < nums[i])
                     {
-                        if (lis[i] == currentMax)
+                        if (dp[j] + 1 >= dp[i])
                         {
-                            isCurrentModified = true;
-                            currentMaxCount++;
-                        }
-                    }
-                    else if (nums[j] < nums[i])
-                    {
-                        if (lis[j] + 1 >= lis[i])
-                        {
-                            //if(lis[j] + 1 > )
-                            lis[i] = lis[j] + 1;
+                            dp[i] = dp[j] + 1;
 
-                            if (lis[i] > currentMax)
-                            {
-                                currentMax = lis[i];
-                                currentMaxCount = 1;
-                                isCurrentModified = true;
-                            }
-                            else if (lis[i] == currentMax)
-                            {
-                                currentMaxCount++;
-                                isCurrentModified = true;
-                            }
+                            if (countArr.Count == dp[j])
+                                countArr.Add(0);
+
+                            countArr[dp[j]]++;
                         }
                     }
                 }
-                if (isCurrentModified)
-                    totalMaxCount = currentMaxCount;
-                //totalMaxCount = Math.Max(currentMaxCount,totalMaxCount);
             }
 
-            return totalMaxCount;
+            return countArr[countArr.Count - 1] == 0 ? nums.Length : countArr[countArr.Count - 1];
         }
+
+        //public int FindNumberOfLIS(int[] nums)
+        //{
+        //    if (nums.Length == 0)
+        //        return 0;
+
+        //    int[] lis = new int[nums.Length];//array for tracking length of increasing sub array
+        //    Array.Fill(lis, 1);
+        //    int currentMax = 1, totalMaxCount = 1;
+
+        //    for (int i = 1; i < nums.Length; i++)
+        //    {
+        //        int currentMaxCount = 1;
+        //        bool isCurrentModified = false ;
+
+        //        for (int j = 0; j < i; j++)
+        //        {
+        //            if (nums[j] == nums[i])
+        //            {
+        //                if (lis[i] == currentMax)
+        //                {
+        //                    isCurrentModified = true;
+        //                    currentMaxCount++;
+        //                }
+        //            }
+        //            else if (nums[j] < nums[i])
+        //            {
+        //                if (lis[j] + 1 >= lis[i])
+        //                {
+        //                    //if(lis[j] + 1 > )
+        //                    lis[i] = lis[j] + 1;
+
+        //                    if (lis[i] > currentMax)
+        //                    {
+        //                        currentMax = lis[i];
+        //                        currentMaxCount = 1;
+        //                        isCurrentModified = true;
+        //                    }
+        //                    else if (lis[i] == currentMax)
+        //                    {
+        //                        currentMaxCount++;
+        //                        isCurrentModified = true;
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        if (isCurrentModified)
+        //            totalMaxCount = currentMaxCount;
+        //        //totalMaxCount = Math.Max(currentMaxCount,totalMaxCount);
+        //    }
+
+        //    return totalMaxCount;
+        //}
 
         //public int FindNumberOfLIS(int[] nums)
         //{

@@ -4,77 +4,104 @@ namespace LeetCode
 {
     public class Word_Ladder
     {
-        public int LadderLength(string beginWord, string endWord, IList<string> wordList)
+        internal class WordLadderNode
         {
-            return GetCount(beginWord, endWord, 1, wordList);
-        }
-
-        private int GetCount(string beginWord, string endWord, int count, IList<string> wordList)
-        {
-            int currentMinCount = -1;
-
-            if (beginWord != endWord)
-                for (int i = 0; i < wordList.Count; i++)
-                {
-                    int current = 0;
-                    var nextStr = GetNextStringByOneCharChange(beginWord, wordList, i, ref current);
-
-                    if (nextStr != null)
-                    {
-                        var newList = getNewWordList(wordList, nextStr);
-                        var response = GetCount(nextStr, endWord, current + count, newList);
-
-                        if (response > 0 && (currentMinCount == -1 || currentMinCount > response))
-                            currentMinCount = response;
-                    }
-                }
-            else
-                return count;
-
-            return currentMinCount == -1 ? 0 : currentMinCount;
-        }
-
-        private IList<string> getNewWordList(IList<string> wordList, string removeString)
-        {
-            var newWordList = new List<string>();
-
-            foreach (var word in wordList)
-                newWordList.Add(word);
-            newWordList.Remove(removeString);
-
-            return newWordList;
-        }
-
-        private string GetNextStringByOneCharChange(string currentString, IList<string> wordList, int strtIndex, ref int count)
-        {
-            if (strtIndex == -1) strtIndex = 0;
-
-            for (int index = strtIndex; index < wordList.Count; index++)
+            public WordLadderNode(string val)
             {
-                int charsDifferent = 0;
-
-                for (int i = 0; i < wordList[index].Length; i++)
-                {
-                    if (wordList[index][i] != currentString[i])
-                    {
-                        charsDifferent++;
-
-                        if (charsDifferent > 1)
-                            break;
-                    }
-                }
-
-                if (charsDifferent == 1)
-                {
-                    count++;
-                    return wordList[index];
-                }
+                Value = val;
+                Children = new List<WordLadderNode>();
             }
 
-            count = 0;
-            return null;
+            public string Value { get; set; }
+
+            public List<WordLadderNode> Children { get; set; }
+        }
+        public int LadderLength(string beginWord, string endWord, IList<string> wordList)
+        {
+            bool[] usedIndexes = new bool[wordList.Count];
+
+            var node = new WordLadderNode(beginWord);
+
+            // Prepare N-array Tree
+            for (int i = 0; i < wordList.Count; i++)
+            {
+                 
+            }
+
+            return -1;
         }
 
+        //public int LadderLength(string beginWord, string endWord, IList<string> wordList)
+        //{
+        //    return GetCount(beginWord, endWord, 1, wordList);
+        //}
+
+        //private int GetCount(string beginWord, string endWord, int count, IList<string> wordList)
+        //{
+        //    int currentMinCount = -1;
+
+        //    if (beginWord != endWord)
+        //        for (int i = 0; i < wordList.Count; i++)
+        //        {
+        //            int current = 0;
+        //            var nextStr = GetNextStringByOneCharChange(beginWord, wordList, i, ref current);
+
+        //            if (nextStr != null)
+        //            {
+        //                var newList = getNewWordList(wordList, nextStr);
+        //                var response = GetCount(nextStr, endWord, current + count, newList);
+
+        //                if (response > 0 && (currentMinCount == -1 || currentMinCount > response))
+        //                    currentMinCount = response;
+        //            }
+        //        }
+        //    else
+        //        return count;
+
+        //    return currentMinCount == -1 ? 0 : currentMinCount;
+        //}
+
+        //private IList<string> getNewWordList(IList<string> wordList, string removeString)
+        //{
+        //    var newWordList = new List<string>();
+
+        //    foreach (var word in wordList)
+        //        newWordList.Add(word);
+        //    newWordList.Remove(removeString);
+
+        //    return newWordList;
+        //}
+
+        //private string GetNextStringByOneCharChange(string currentString, IList<string> wordList, int strtIndex, ref int count)
+        //{
+        //    if (strtIndex == -1) strtIndex = 0;
+
+        //    for (int index = strtIndex; index < wordList.Count; index++)
+        //    {
+        //        int charsDifferent = 0;
+
+        //        for (int i = 0; i < wordList[index].Length; i++)
+        //        {
+        //            if (wordList[index][i] != currentString[i])
+        //            {
+        //                charsDifferent++;
+
+        //                if (charsDifferent > 1)
+        //                    break;
+        //            }
+        //        }
+
+        //        if (charsDifferent == 1)
+        //        {
+        //            count++;
+        //            return wordList[index];
+        //        }
+        //    }
+
+        //    count = 0;
+        //    return null;
+        //}
+        //////////////////////
         //private int GetCount1(string beginWord, string endWord, int count, ref IList<string> wordList)
         //{
         //    string str = beginWord;

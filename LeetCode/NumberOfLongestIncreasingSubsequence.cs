@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace LeetCode
 {
@@ -10,31 +9,47 @@ namespace LeetCode
             if (nums.Length == 0)
                 return 0;
 
-            int[] dp = new int[nums.Length];//array for tracking len of increasing sub array
-            List<int> countArr = new List<int> { 0 };// list for tracking no. of longest seq's
-
-            Array.Fill(dp, 1);
+            int[] lengthArr = new int[nums.Length];//array for tracking len of increasing sub array
+            int[] countArr = new int[nums.Length];// list for tracking no. of longest seq's
+            lengthArr[0] = 1;
+            countArr[0] = 1;
 
             for (int i = 1; i < nums.Length; i++)
             {
+                lengthArr[i] = 1;
+                countArr[i] = 1;
+
                 for (int j = 0; j < i; j++)
                 {
                     if (nums[j] < nums[i])
                     {
-                        if (dp[j] + 1 >= dp[i])
+                        if (lengthArr[j] + 1 > lengthArr[i])
                         {
-                            dp[i] = dp[j] + 1;
-
-                            if (countArr.Count == dp[j])
-                                countArr.Add(0);
-
-                            countArr[dp[j]]++;
+                            lengthArr[i] = lengthArr[j] + 1;
+                            countArr[i] = countArr[j];
+                        }
+                        else if (lengthArr[j] + 1 == lengthArr[i])
+                        {
+                            countArr[i] += countArr[j];
                         }
                     }
                 }
             }
 
-            return countArr[countArr.Count - 1] == 0 ? nums.Length : countArr[countArr.Count - 1];
+            int maxLength = 1, num = 1;
+
+            for (int i = 1; i < nums.Length; i++)
+            {
+                if (lengthArr[i] > maxLength)
+                {
+                    maxLength = lengthArr[i];
+                    num = countArr[i];
+                }
+                else if (lengthArr[i] == maxLength)
+                    num += countArr[i];
+            }
+
+            return num;
         }
 
         //public int FindNumberOfLIS(int[] nums)

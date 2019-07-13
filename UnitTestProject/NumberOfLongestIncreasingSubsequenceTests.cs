@@ -26,9 +26,6 @@ namespace UnitTestProject
             arr = new int[] { 4, 6, 7, 7 };
             x = obj.FindNumberOfLIS(arr);//2  
 
-            arr = new int[] { 1, 2, 4, 3, 5, 4, 7, 2 };
-            x = obj.FindNumberOfLIS(arr);//2
-
             arr = new int[] { };
             x = obj.FindNumberOfLIS(arr);//0
 

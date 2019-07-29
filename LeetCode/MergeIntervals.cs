@@ -32,7 +32,7 @@ namespace LeetCode
             return list.ToArray();
         }
 
-        public class SortNestedArrayClass : IComparer<int[]>
+        private class SortNestedArrayClass : IComparer<int[]>
         {
             public int Compare(int[] x, int[] y)
             {

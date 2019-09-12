@@ -6,30 +6,55 @@ namespace LeetCode
     {
         public bool ContainsNearbyDuplicate(int[] nums, int k)
         {
-            Dictionary<int, List<int>> keyValuePairs = new Dictionary<int, List<int>>();
+            Dictionary<int, int> keyValuePairs = new Dictionary<int, int>();
 
             for (int i = 0; i < nums.Length; i++)
             {
                 if (keyValuePairs.ContainsKey(nums[i]))
                 {
-                    var val = keyValuePairs[nums[i]];
+                    if (i - keyValuePairs[nums[i]] <= k)
+                        return true;
 
-                    for (int j = val.Count - 1; j >= 0; j--)
-                    {
-                        if (i - val[j] <= k)
-                            return true;
-                    }
-
-                    val.Add(i);
+                    keyValuePairs[nums[i]] = i;
                 }
                 else
                 {
-                    var val = new List<int>() { i };
-                    keyValuePairs[nums[i]] = val;
+                    keyValuePairs.Add(nums[i],i);
                 }
             }
 
             return false;
         }
+
+        // working using Dictionary<int, List<int>> memory
+        //public bool ContainsNearbyDuplicate(int[] nums, int k)
+        //{
+        //    Dictionary<int, List<int>> keyValuePairs = new Dictionary<int, List<int>>();
+
+        //    for (int i = 0; i < nums.Length; i++)
+        //    {
+        //        if (keyValuePairs.ContainsKey(nums[i]))
+        //        {
+        //            var val = keyValuePairs[nums[i]];
+
+        //            for (int j = val.Count - 1; j >= 0; j--)
+        //            {
+        //                if (i - val[j] <= k)
+        //                    return true;
+        //                else if (j - i > k)
+        //                    break;
+        //            }
+
+        //            val.Add(i);
+        //        }
+        //        else
+        //        {
+        //            var val = new List<int>() { i };
+        //            keyValuePairs[nums[i]] = val;
+        //        }
+        //    }
+
+        //    return false;
+        //}
     }
 }

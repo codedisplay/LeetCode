@@ -9,22 +9,22 @@ namespace LeetCode
             if (nums.Length == 0)
                 return new List<int>();
 
-            int element1 = 0, element2 = 0, count1 = 0, count2 = 0;
+            int first = 0, second = 0, count1 = 0, count2 = 0;
 
-            for (int i = 0; i < nums.Length; i++)
+            for (int i = 0; i < nums.Length; i++)// find two numbers
             {
-                if (element1 == nums[i])
+                if (first == nums[i])
                     count1++;
-                else if (element2 == nums[i])
+                else if (second == nums[i])
                     count2++;
                 else if (count1 == 0)
                 {
-                    element1 = nums[i];
+                    first = nums[i];
                     count1++;
                 }
                 else if (count2 == 0)
                 {
-                    element2 = nums[i];
+                    second = nums[i];
                     count2++;
                 }
                 else
@@ -34,21 +34,27 @@ namespace LeetCode
                 }
             }
 
-            if (element1 == element2)
-                return new List<int>() { element1 };
+            if (first == second)
+                return new List<int>() { first };
 
             count1 = 0;
             count2 = 0;
 
-            for (int i = 0; i < nums.Length; i++)
+            for (int i = 0; i < nums.Length; i++)// find actual count of two numbers
             {
-                if (nums[i] == element1) count1++;
-                else if (nums[i] == element2) count2++;
+                if (nums[i] == first)
+                    count1++;
+                else if (nums[i] == second)
+                    count2++;
             }
 
             IList<int> list = new List<int>();
-            if (count1 > nums.Length / 3) list.Add(element1);
-            if (count2 > nums.Length / 3) list.Add(element2);
+
+            if (count1 > nums.Length / 3)
+                list.Add(first);
+            if (count2 > nums.Length / 3)
+                list.Add(second);
+
             return list;
         }
     }

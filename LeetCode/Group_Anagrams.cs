@@ -13,6 +13,10 @@ namespace LeetCode
         {
             IList<IList<string>> list = new List<IList<string>>();
             Dictionary<string, IList<string>> lookup = new Dictionary<string, IList<string>>();
+            
+            Dictionary<string, string> d = new Dictionary<string, string>();
+
+            var x = d.Values.ToList();
 
             for (int i = 0; i < strs.Length; i++)
             {

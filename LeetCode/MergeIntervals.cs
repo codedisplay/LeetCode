@@ -11,6 +11,8 @@ namespace LeetCode
                 return intervals;
 
             List<int[]> list = new List<int[]>();
+            //list.Sort(new SortNestedArrayClass());
+
             Array.Sort(intervals, new SortNestedArrayClass());
             int i = 0, start, end;
 

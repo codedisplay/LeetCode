@@ -13,6 +13,7 @@ namespace LeetCode
             for (int i = 0; i < nums.Length; i++)
             {
                 int val = GetArrayNestingCount(nums, i, dic);
+
                 if (val > currentMax) currentMax = val;
             }
 

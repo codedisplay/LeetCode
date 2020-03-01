@@ -4,7 +4,7 @@
     {
         public int MaxProfit(int[] prices)
         {
-            int maxProfit = 0, currentMin = int.MaxValue, currentMax = 0, currentMaxProfit = 0;
+            int currentMin = int.MaxValue, currentMax = 0, currentMaxProfit = 0, maxProfit = 0;
 
             for (int i = 0; i < prices.Length; i++)
             {

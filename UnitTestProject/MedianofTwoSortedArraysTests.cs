@@ -9,10 +9,11 @@ namespace UnitTestProject
         [TestMethod]
         public void ThreeSumClosestTests()
         {
-            int[] nums = new int[] { -4, -1, 1, 2 };
+            int[] nums1 = new int[] {1,2,3,4};
+            int[] nums2 = new int[] { 5,6,7 };
             MedianofTwoSortedArrays obj = new MedianofTwoSortedArrays();
 
-            var x = obj.ThreeSumClosest(nums, 1);//2
+            var x = obj.FindMedianSortedArrays(nums1, nums2);//4
 
 
         }

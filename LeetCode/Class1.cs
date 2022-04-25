@@ -220,53 +220,7 @@ namespace LeetCode
 
         ////Example 2:
 
-        ////Input: "cbbd"
-        ////Output: "bb"
-        //x = LongestPalindrome("cbbd");
-
-        //x = LongestPalindrome("");//0
-
-        //x = LongestPalindrome("bb");
-        //        x = LongestPalindrome("abb");
-        public static string LongestPalindrome(string s)
-        {
-            if (s.Length == 0 || (s.Length == 2 && s[0] == s[1])) return s;
-
-            string str = s.Substring(0, 1);
-
-            for (int i = 0; i < s.Length - 2; i++)
-            {
-                for (int j = 1; j < 3; j++)
-                {
-                    if (s[i] == s[i + j])
-                    {
-                        var current = ExtendPalindrome(s, i, i + j);
-
-                        if (current.Length > str.Length)
-                            str = current;
-                    }
-                }
-            }
-
-            if (str.Length == 1 && s.Length > 2 && s[s.Length - 2] == s[s.Length - 1]) return s.Substring(s.Length - 2, 2);
-
-            return str;
-        }
-
-        private static string ExtendPalindrome(string s, int startIndex, int endIndex)
-        {
-            while (true)
-            {
-                if (startIndex != 0 && endIndex != s.Length - 1 && s[startIndex - 1] == s[endIndex + 1])
-                {
-                    startIndex--;
-                    endIndex++;
-                }
-                else
-                    return s.Substring(startIndex, endIndex - startIndex + 1);
-            }
-        }
-
+        
 
 
 

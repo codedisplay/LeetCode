@@ -29,6 +29,10 @@ namespace UnitTestProject
             S = "A";
             T = "B";
             x = obj.MinWindow(S, T);//
+
+            S = "A";
+            T = "A";
+            x = obj.MinWindow(S, T);//
         }
     }
 }

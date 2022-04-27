@@ -22,8 +22,6 @@ namespace UnitTestProject
 
             s = "RLRRRLLRLL";
             x = obj.BalancedStringSplit(s);//2
-
-
         }
     }
 }
